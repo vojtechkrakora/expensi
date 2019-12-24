@@ -49,6 +49,14 @@ public class FinancialRecordRestController {
         return result;
     }
 
+    @GetMapping(value = "records/amount/{note}", produces = "application/json")
+    public Map<String, Double> getAmountByNote(@PathVariable("note") String note) {
+        Map<String, Double> result = new HashMap<>();
+        result.put("amountByNote", financialRecordService.getAmountByNote(note));
+
+        return result;
+    }
+
     @PostMapping(value = "/records", consumes = "application/json", produces = "application/json")
     public @ResponseBody  ResponseEntity<String> addRecords(@RequestBody List<FinancialRecordDto> dataList) {
         financialRecordService.addFinancialRecordList(dataList);

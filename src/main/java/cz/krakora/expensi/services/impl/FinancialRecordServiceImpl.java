@@ -106,6 +106,17 @@ public class FinancialRecordServiceImpl implements FinancialRecordService {
         return recordRepository.getMedianAmount(ExpensiConstants.OUTCOME, from, to);
     }
 
+    @Override
+    public double getAmountByNote(String note) {
+        Double result = recordRepository.getAmountByNote(note);
+
+        if (result == null) {
+            return 0.0;
+        }
+
+        return recordRepository.getAmountByNote(note);
+    }
+
     /**
      * Validates that input string is date format or even exists, returns Date instead of String.
      * @param input String which should contain String to convert to a Date.

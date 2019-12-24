@@ -18,4 +18,5 @@ public interface FinancialRecordService {
     double getAvgOutcome(Map<String, String> params) throws ParseException;
     double getMedianIncome(Map<String, String> params) throws ParseException;
     double getMedianOutcome(Map<String, String> params) throws ParseException;
+    double getAmountByNote(String note);
 }
