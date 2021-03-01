@@ -22,6 +22,6 @@ public class RegularExpensesInstitutionRestController {
     @PostMapping(value = "/institutions", consumes = "application/json", produces = "application/json")
     public @ResponseBody ResponseEntity<String> addInstitutions(@RequestBody List<RegularExpensesInstitutionDto> data) {
         regularInstitutionRepositoryService.addInstitutionsList(data);
-        return new ResponseEntity<String>("Post Response", HttpStatus.OK);
+        return new ResponseEntity<>("Post Response", HttpStatus.OK);
     }
 }

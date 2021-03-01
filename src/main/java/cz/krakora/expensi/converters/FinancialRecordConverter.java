@@ -12,10 +12,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-public class FinancialRecordConverter extends CommonConverter<FinancialRecordDto, FinancialRecord> {
-    private RegularExpensesInstitutionConverter regularExpensesInstitutionConverter = new RegularExpensesInstitutionConverter();
-    private ModelMapper modelMapper = new ModelMapper();
-    private Logger logger = LoggerFactory.getLogger(FinancialRecordConverter.class);
+public class FinancialRecordConverter implements CommonConverter<FinancialRecordDto, FinancialRecord> {
+    private final RegularExpensesInstitutionConverter regularExpensesInstitutionConverter = new RegularExpensesInstitutionConverter();
+    private final ModelMapper modelMapper = new ModelMapper();
+    private final Logger logger = LoggerFactory.getLogger(FinancialRecordConverter.class);
 
     @Override
     public FinancialRecordDto toDto(FinancialRecord data) {

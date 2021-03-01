@@ -3,9 +3,7 @@ package cz.krakora.expensi.converters;
 import cz.krakora.expensi.dto.RegularExpensesInstitutionDto;
 import cz.krakora.expensi.models.RegularExpensesInstitution;
 
-public class RegularExpensesInstitutionConverter extends CommonConverter<RegularExpensesInstitutionDto,RegularExpensesInstitution> {
-    public RegularExpensesInstitutionConverter() {
-    }
+public class RegularExpensesInstitutionConverter implements CommonConverter<RegularExpensesInstitutionDto,RegularExpensesInstitution> {
 
     @Override
     public  RegularExpensesInstitutionDto toDto(RegularExpensesInstitution data) {

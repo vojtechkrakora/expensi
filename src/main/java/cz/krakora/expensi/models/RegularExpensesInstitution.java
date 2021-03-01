@@ -18,5 +18,5 @@ public class RegularExpensesInstitution {
     private String expectedNoteExpr;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "regularExpensesInstitution")
-    private List<FinancialRecord> financialRecords = new ArrayList<FinancialRecord>();
+    private List<FinancialRecord> financialRecords = new ArrayList<>();
 }

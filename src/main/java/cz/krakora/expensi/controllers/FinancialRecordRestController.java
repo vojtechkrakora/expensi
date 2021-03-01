@@ -19,9 +19,10 @@ import java.util.Map;
 
 @RestController
 public class FinancialRecordRestController {
+    private final Logger logger = LoggerFactory.getLogger(FinancialRecordRestController.class);
+
     @Autowired
     private FinancialRecordService financialRecordService;
-    private Logger logger = LoggerFactory.getLogger(FinancialRecordRestController.class);
 
     @GetMapping(value = "/records", produces = "application/json")
     public List<FinancialRecordDto> getRecords(){

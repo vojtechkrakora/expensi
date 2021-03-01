@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class RegularInstitutionRepositoryServiceImpl implements RegularInstitutionRepositoryService {
     private final InstitutionsRepository institutionsRepository;
-    private RegularExpensesInstitutionConverter regularExpensesInstitutionConverter = new RegularExpensesInstitutionConverter();
+    private final RegularExpensesInstitutionConverter regularExpensesInstitutionConverter = new RegularExpensesInstitutionConverter();
 
     public RegularInstitutionRepositoryServiceImpl(InstitutionsRepository institutionsRepository) {
         this.institutionsRepository = institutionsRepository;

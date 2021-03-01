@@ -17,9 +17,10 @@ import java.util.Map;
 
 @RestController
 public class InfoRestController {
+    private final Logger logger = LoggerFactory.getLogger(InfoRestController.class);
+
     @Autowired
     ComplexInfoService complexInfoService;
-    private Logger logger = LoggerFactory.getLogger(FinancialRecordRestController.class);
 
     @GetMapping(value = "/info", produces = "application/json")
     public @ResponseBody ResponseEntity<ComplexInfoDto> getInfo(@RequestParam(required = false) Map<String, String> params) {

@@ -18,7 +18,7 @@ import java.util.Map;
 @Service
 public class FinancialRecordServiceImpl implements FinancialRecordService {
     private final RecordRepository recordRepository;
-    private FinancialRecordConverter financialRecordConverter = new FinancialRecordConverter();
+    private final FinancialRecordConverter financialRecordConverter = new FinancialRecordConverter();
     ModelMapper modelMapper = new ModelMapper();
 
     public FinancialRecordServiceImpl(RecordRepository recordRepository) {

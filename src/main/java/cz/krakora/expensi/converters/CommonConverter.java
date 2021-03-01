@@ -2,38 +2,30 @@ package cz.krakora.expensi.converters;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public abstract class CommonConverter<T,E> {
+public interface CommonConverter<T,E> {
 
-    public CommonConverter() {
-    }
-
-    public List<T> allToDto(List<E> data) {
+    default List<T> allToDto(List<E> data) {
         if (data == null) {
-            return null;
+            return new ArrayList<>();
         }
 
-        List<T> dtoList = new ArrayList<T>();
-        for (E e: data) {
-            dtoList.add(toDto(e));
-        }
-
-        return dtoList;
+        return data.stream()
+                .map(this::toDto)
+                .collect(Collectors.toList());
     }
 
-    public List<E> allToData(List<T> dtoList) {
+    default List<E> allToData(List<T> dtoList) {
         if (dtoList == null) {
-            return null;
+            return new ArrayList<>();
         }
 
-        List<E> data = new ArrayList<E>();
-        for (T t: dtoList) {
-            data.add(toData(t));
-        }
-
-        return data;
+        return dtoList.stream()
+                .map(this::toData)
+                .collect(Collectors.toList());
     }
 
-    public abstract T toDto(E data);
-    public abstract E toData(T dto);
+    T toDto(E data);
+    E toData(T dto);
 }
